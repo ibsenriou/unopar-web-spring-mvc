@@ -28,9 +28,7 @@ This project is a simple RESTFULL API using Spring Web MVC.
 
 ## Authors
 - [Ibsen Gabriel Santos]
-- [LinkedIn](https://www.linkedin.com/in/ibsen-gabriel-santos)
-- [Iago]
-- [LinkedIn](https://www.linkedin.com/in/iago-oliveira-4b5b3a1b0/)
+- [LinkedIn](https://www.linkedin.com/in/ibsen-gabriel-santos-359377170/)
 
 ## License
 This project is under the license [MIT](./LICENSE)
