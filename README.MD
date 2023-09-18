@@ -8,15 +8,15 @@ This project is a simple RESTFULL API using Spring Web MVC.
 
 ## How to run
 - Clone this repository
-- Run the command `./mvnw spring-boot:run` in the root folder
+- Run the Application.java file
 - Open your browser and go to `http://localhost:8080`
 - You can use the following endpoints:
-    - `http://localhost:8080/api/v1/employees` - GET - Get all employees
-    - `http://localhost:8080/api/v1/employees/{id}` - GET - Get employee by id
-    - `http://localhost:8080/api/v1/employees` - POST - Create a new employee
-    - `http://localhost:8080/api/v1/employees/{id}` - PUT - Update an employee
-    - `http://localhost:8080/api/v1/employees/{id}` - DELETE - Delete an employee
-- You can use the following JSON to create or update an employee:
+    - `http://localhost:8080/users` - GET - Get all users
+    - `http://localhost:8080/users/{id}` - GET - Get user by id
+    - `http://localhost:8080/users` - POST - Create a new user
+    - `http://localhost:8080/users/{id}` - PUT - Update a user
+    - `http://localhost:8080/users/{id}` - DELETE - Delete a user
+- You can use the following JSON to create or update a user:
 ```json
 {
     "name": "John Doe",

@@ -2,6 +2,7 @@ package com.example.demo.services;
 
 import com.example.demo.entities.User;
 import com.example.demo.repositories.UserRepository;
+import com.example.demo.services.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,7 +27,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public User findById(Long id) {
         Optional<User> user = userRepository.findById(id);
-        return user.orElse(null);
+        if (user.isPresent()) {
+            return user.get();
+        } else {
+            throw new ResourceNotFoundException("User with id " + id + " not found");
+        }
     }
 
     @Override
@@ -36,7 +41,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void delete(Long id) {
-        userRepository.deleteById(id);
+        Optional<User> user = userRepository.findById(id);
+        if (user.isPresent()) {
+            userRepository.deleteById(id);
+        } else {
+            throw new ResourceNotFoundException("User with id " + id + " not found");
+        }
     }
 
     @Override
@@ -51,7 +61,7 @@ public class UserServiceImpl implements UserService {
             updatedUser.setPassword(user.getPassword());
             return userRepository.save(updatedUser);
         } else {
-            return null; // Handle not found case
+            throw new ResourceNotFoundException("User with id " + id + " not found");
         }
     }
 }
